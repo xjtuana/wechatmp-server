@@ -43,6 +43,7 @@ public class HibernateUtil {
     @SuppressWarnings("unchecked")
 	public static void closeSession() throws HibernateException {
         Session s = (Session) session.get();
+//      s.clear();
         if (s != null)
             s.close();
         session.set(null);
