@@ -16,13 +16,13 @@
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property> 
 		
 		<!-- JDBC URL --> 
-		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/dbname</property> 
+		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/xjtuana1.0</property> 
 		
 		<!-- 数据库用户名--> 
-		<property name="hibernate.connection.username">username</property> 
+		<property name="hibernate.connection.username">xjtuana</property> 
 		
 		<!-- 数据库密码--> 
-		<property name="hibernate.connection.password">password</property> 
+		<property name="hibernate.connection.password">xjtuana</property> 
 		
 		<!-- 设置字符集 --> 
 		<property name="hibernate.connection.characterEncoding">UTF-8</property>

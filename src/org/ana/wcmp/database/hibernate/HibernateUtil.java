@@ -15,7 +15,7 @@ public class HibernateUtil {
     static {
         try {
             // Create the SessionFactory from hibernate.cfg.xml
-        	Configuration cfg = new Configuration().configure();
+        	Configuration cfg = new Configuration().configure("org/ana/wcmp/database/hibernate/hibernate.cfg.xml");
         	StandardServiceRegistryBuilder srb = new StandardServiceRegistryBuilder().applySettings(cfg.getProperties());
         	StandardServiceRegistry sr = srb.build();
         	sessionFactory = cfg.buildSessionFactory(sr);
