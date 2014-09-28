@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+ <class dynamic-insert="true" dynamic-update="true" lazy="false"
+  name="org.ana.wcmp.database.dao.WechatUserAuthRelDAO" table="T_WECHAT_USER_AUTH_REL">
+  <id name="pk_wcauth_rel" type="long">
+   <generator class="identity"/>
+  </id>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.WechatBizDAO" column="wechat_biz_id"
+   fetch="join" name="wechat_biz"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.UserRoleDAO" column="user_role_id"
+   fetch="join" name="user_role"/>
+ </class>
+</hibernate-mapping>

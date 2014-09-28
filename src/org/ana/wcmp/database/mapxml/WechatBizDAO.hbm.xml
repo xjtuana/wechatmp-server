@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+ <class dynamic-insert="true" dynamic-update="true" lazy="false"
+  name="org.ana.wcmp.database.dao.WechatBizDAO" table="T_WECHAT_BIZ">
+  <id name="pk_wechat_biz" type="long">
+   <generator class="identity"/>
+  </id>
+  <property length="45" name="wechat_biz_name" not-null="true" type="string"/>
+  <property length="45" name="wechat_biz_label" not-null="true" type="string"/>
+  <property length="100" name="wechat_biz_class" not-null="true" type="string"/>
+  <property length="100" name="wechat_biz_method" not-null="true" type="string"/>
+  <property length="45" name="wechat_biz_code" not-null="true"
+   type="string" unique="true"/>
+ </class>
+</hibernate-mapping>

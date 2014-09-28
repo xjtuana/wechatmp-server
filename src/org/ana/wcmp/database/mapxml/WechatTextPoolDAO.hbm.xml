@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+ <class dynamic-insert="true" dynamic-update="true" lazy="false"
+  name="org.ana.wcmp.database.dao.WechatTextPoolDAO" table="T_WECHAT_TEXT_POOL">
+  <id name="pk_text_msg" type="long">
+   <generator class="identity"/>
+  </id>
+  <property length="45" name="text_msg_name" not-null="true" type="string"/>
+  <property name="text_msg_content" not-null="true" type="blob"/>
+ </class>
+</hibernate-mapping>

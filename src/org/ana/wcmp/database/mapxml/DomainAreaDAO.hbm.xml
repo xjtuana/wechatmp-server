@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false" package="org.ana.wcmp.database.dao">
+ <class dynamic-insert="true" dynamic-update="true" name="DomainAreaDAO" table="T_DOMAIN_AREA">
+  <id name="pk_domain_area" type="long">
+   <generator class="identity"/>
+  </id>
+  <property generated="never" lazy="false" length="45"
+   name="domain_area_name" not-null="true" type="string"/>
+  <property generated="never" lazy="false" name="domain_area_desc" type="blob"/>
+ </class>
+</hibernate-mapping>

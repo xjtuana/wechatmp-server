@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+ <class dynamic-insert="true" dynamic-update="true" lazy="false"
+  name="org.ana.wcmp.database.dao.OrderDAO" table="T_ORDER">
+  <id name="pk_order" type="long">
+   <generator class="identity"/>
+  </id>
+  <property generated="never" lazy="false" length="45"
+   name="order_client_name" not-null="true" type="string"/>
+  <property generated="never" lazy="false" length="45"
+   name="order_client_phone" not-null="true" type="string"/>
+  <property generated="never" lazy="false" length="45"
+   name="order_client_netid" type="string"/>
+  <property generated="never" lazy="false" length="45"
+   name="order_client_ip" type="string"/>
+  <property generated="never" lazy="false" length="45"
+   name="order_client_building" type="string"/>
+  <property generated="never" lazy="false" length="45"
+   name="order_client_room" type="string"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.WechatUserDAO"
+   column="order_client_wechat_user_id" fetch="join" name="order_client_wechat_user"/>
+  <property generated="never" lazy="false" name="order_fault_desc" type="blob"/>
+  <property generated="never" lazy="false" name="order_add_time"
+   not-null="true" type="calendar"/>
+  <property generated="never" lazy="false" name="order_resv_time" type="calendar"/>
+  <property generated="never" lazy="false" name="order_status"
+   not-null="true" type="integer"/>
+  <property generated="never" lazy="false" length="128"
+   name="order_certification_code" not-null="true" type="string"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.StaffDAO"
+   column="order_resp_staff_id" fetch="join" name="order_resp_staff"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.WechatUserDAO"
+   column="order_resp_staff_wechat_user_id" fetch="join" name="order_resp_staff_wechat_user"/>
+  <property generated="never" lazy="false" name="order_fix_result" type="blob"/>
+  <property generated="never" lazy="false" name="order_fix_time" type="calendar"/>
+  <property generated="never" lazy="false"
+   name="order_client_rate_score" type="integer"/>
+  <property generated="never" lazy="false" name="order_client_rate_desc" type="blob"/>
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+ <class dynamic-insert="true" dynamic-update="true" lazy="false"
+  name="org.ana.wcmp.database.dao.StaffOrderRelDAO" table="T_STAFF_ORDER_REL">
+  <id name="pk_staff_order" type="long">
+   <generator class="identity"/>
+  </id>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.StaffDAO" column="staff_id"
+   fetch="join" name="staff"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.OrderDAO" column="order_id"
+   fetch="join" name="order"/>
+ </class>
+</hibernate-mapping>

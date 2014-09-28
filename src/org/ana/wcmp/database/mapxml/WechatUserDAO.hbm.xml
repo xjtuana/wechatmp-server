@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+ <class dynamic-insert="true" dynamic-update="true" lazy="false"
+  name="org.ana.wcmp.database.dao.WechatUserDAO" table="T_WECHAT_USER">
+  <id name="pk_wechat_user" type="long">
+   <generator class="identity"/>
+  </id>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.BasicUserDAO"
+   column="wechat_user_basic_id" fetch="join" name="wechat_user_basic"/>
+  <property length="45" name="wechat_user_acc" type="string"/>
+  <property length="45" name="wechat_user_openid" not-null="true"
+   type="string" unique="true"/>
+  <property name="wechat_user_sub_time" not-null="true" type="calendar"/>
+  <property name="wechat_user_unsub_time" type="calendar"/>
+  <property name="wechat_user_status" not-null="true" type="integer"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.StaffDAO"
+   column="wechat_user_staff_id" fetch="join" name="wechat_user_staff"/>
+  <property name="wechat_user_group_id" type="integer"/>
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+ <class dynamic-insert="true" dynamic-update="true" lazy="false"
+  name="org.ana.wcmp.database.dao.WechatMsgPoolNewsDAO" table="T_WECHAT_MSG_POOL_NEWS">
+  <id name="pk_news_msg" type="long">
+   <generator class="identity"/>
+  </id>
+  <property length="45" name="news_msg_name" not-null="true" type="string"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.WechatArticlePoolDAO"
+   column="news_msg_article1" fetch="join" name="news_msg_article1" not-null="true"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.WechatArticlePoolDAO"
+   column="news_msg_article2" fetch="join" name="news_msg_article2"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.WechatArticlePoolDAO"
+   column="news_msg_article3" fetch="join" name="news_msg_article3"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.WechatArticlePoolDAO"
+   column="news_msg_article4" fetch="join" name="news_msg_article4"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.WechatArticlePoolDAO"
+   column="news_msg_article5" fetch="join" name="news_msg_article5"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.WechatArticlePoolDAO"
+   column="news_msg_article6" fetch="join" name="news_msg_article6"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.WechatArticlePoolDAO"
+   column="news_msg_article7" fetch="join" name="news_msg_article7"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.WechatArticlePoolDAO"
+   column="news_msg_article8" fetch="join" name="news_msg_article8"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.WechatArticlePoolDAO"
+   column="news_msg_article9" fetch="join" name="news_msg_article9"/>
+  <many-to-one cascade="save-update"
+   class="org.ana.wcmp.database.dao.WechatArticlePoolDAO"
+   column="news_msg_article10" fetch="join" name="news_msg_article10"/>
+ </class>
+</hibernate-mapping>

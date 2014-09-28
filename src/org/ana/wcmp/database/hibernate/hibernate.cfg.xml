@@ -1,64 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<!DOCTYPE hibernate-configuration PUBLIC  
-"-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
-"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"> 
-<hibernate-configuration> 
-	<session-factory> 
-	<!-- 各属性的配置-->  
-	
-		<!-- 为true表示将Hibernate发送给数据库的sql显示出来 --> 
-		<property name="hibernate.show_sql">true</property> 
-		
-		<!-- SQL方言，这边设定的是MySQL --> 
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property> 
-		
-		<!--驱动程序--> 
-		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property> 
-		
-		<!-- JDBC URL --> 
-		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/xjtuana1.0</property> 
-		
-		<!-- 数据库用户名--> 
-		<property name="hibernate.connection.username">xjtuana</property> 
-		
-		<!-- 数据库密码--> 
-		<property name="hibernate.connection.password">xjtuana</property> 
-		
-		<!-- 设置字符集 --> 
-		<property name="hibernate.connection.characterEncoding">UTF-8</property>
-		
-		<!-- 使用unicode --> 
-		<property name="hibernate.connection.useUnicode">true</property>
-		
-		<!-- JDBC 连接池 (使用 c3p0) -->
-		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>  
-		
-		<!-- 连接池 最小连接数 -->
-        <property name="hibernate.c3p0.min_size">10</property>
-        
-        <!-- 连接池 最大连接数 -->
-    	<property name="hibernate.c3p0.max_size">50</property>
-    	
-    	<!-- 连接池 连接超时时间 -->
-    	<property name="hibernate.c3p0.timeout">5000</property>
-    	
-    	<!-- 连接池 最大语句数 -->
-    	<property name="hibernate.c3p0.max_statements">200</property>
-    	
-    	<!-- 连接池 是否测试连接（重要！防报错！） --> 
-		<property name="hibernate.c3p0.testConnectionOnCheckout">true</property>
-        
-		<!-- 映射文件 --> 
-		<!-- 
-		<mapping resource="ana/database/hbmxml/order.hbm.xml"/> 
-		<mapping resource="ana/database/hbmxml/wechat_msgrec.hbm.xml"/> 
-		<mapping resource="ana/database/hbmxml/staff.hbm.xml"/> 
-		<mapping resource="ana/database/hbmxml/wechat_subscribers.hbm.xml"/>
-		<mapping resource="ana/database/hbmxml/group_role.hbm.xml"/>
-		<mapping resource="ana/database/hbmxml/department.hbm.xml"/>
-		<mapping resource="ana/database/hbmxml/group.hbm.xml"/>
-		<mapping resource="ana/database/hbmxml/job.hbm.xml"/>
-		<mapping resource="ana/database/hbmxml/building.hbm.xml"/>
-		--> 
-	</session-factory> 
-</hibernate-configuration> 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <!-- 各属性的配置
+ 为true表示将Hibernate发送给数据库的sql显示出来 -->
+  <property name="hibernate.show_sql">true</property>
+  <!-- SQL方言，这边设定的是MySQL -->
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+  <!--驱动程序-->
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <!-- JDBC URL -->
+  <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/xjtuana_plan</property>
+  <!-- 数据库用户名-->
+  <property name="hibernate.connection.username">xjtuana</property>
+  <!-- 数据库密码-->
+  <property name="hibernate.connection.password">xjtuana</property>
+  <!-- 设置字符集 -->
+  <property name="hibernate.connection.characterEncoding">UTF-8</property>
+  <!-- 使用unicode -->
+  <property name="hibernate.connection.useUnicode">true</property>
+  <!-- JDBC 连接池 (使用 c3p0) -->
+  <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+  <!-- 连接池 最小连接数 -->
+  <property name="hibernate.c3p0.min_size">10</property>
+  <!-- 连接池 最大连接数 -->
+  <property name="hibernate.c3p0.max_size">50</property>
+  <!-- 连接池 连接超时时间 -->
+  <property name="hibernate.c3p0.timeout">5000</property>
+  <!-- 连接池 最大语句数 -->
+  <property name="hibernate.c3p0.max_statements">200</property>
+  <!-- 连接池 是否测试连接（重要！防报错！） -->
+  <property name="hibernate.c3p0.testConnectionOnCheckout">true</property>
+  <mapping resource="org/ana/wcmp/database/mapxml/DepartmentDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/DomainAreaDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/DomainBuildingDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/GroupDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/BasicUserDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/OAUserDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/OrderDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/StaffBuildingRelDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/StaffDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/StaffOrderRelDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/UserRoleDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/WechatArticlePoolDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/WechatBizDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/WechatMsgPoolNewsDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/WechatMsgRecDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/WechatTextPoolDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/WechatTextRespRuleDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/WechatUserAuthRelDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/WechatUserDAO.hbm.xml"/>
+  <mapping resource="org/ana/wcmp/database/mapxml/WechatUserRoleRelDAO.hbm.xml"/>
+ </session-factory>
+</hibernate-configuration>

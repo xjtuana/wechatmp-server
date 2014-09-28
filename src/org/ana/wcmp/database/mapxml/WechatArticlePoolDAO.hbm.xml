@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="false">
+ <class dynamic-insert="true" dynamic-update="true" lazy="false"
+  name="org.ana.wcmp.database.dao.WechatArticlePoolDAO" table="T_WECHAT_ARTICLE_POOL">
+  <id name="pk_article" type="long">
+   <generator class="identity"/>
+  </id>
+  <property length="45" name="article_name" not-null="true"
+   type="string" unique="true"/>
+  <property name="article_title" type="blob"/>
+  <property name="article_desc" type="blob"/>
+  <property length="500" name="article_url" type="string"/>
+  <property length="500" name="article_pic_uri" type="string"/>
+  <property length="500" name="article_thumb_pic_uri" type="string"/>
+ </class>
+</hibernate-mapping>
