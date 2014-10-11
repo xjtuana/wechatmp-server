@@ -11,11 +11,11 @@
   <!--驱动程序-->
   <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
   <!-- JDBC URL -->
-  <property name="hibernate.connection.url">jdbc:mysql://58.206.125.26:3306/xjtuana_server</property>
+  <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/dbname</property>
   <!-- 数据库用户名-->
-  <property name="hibernate.connection.username">godrick</property>
+  <property name="hibernate.connection.username">username</property>
   <!-- 数据库密码-->
-  <property name="hibernate.connection.password">godrick</property>
+  <property name="hibernate.connection.password">password</property>
   <!-- 设置字符集 -->
   <property name="hibernate.connection.characterEncoding">UTF-8</property>
   <!-- 使用unicode -->
