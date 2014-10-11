@@ -15,7 +15,7 @@ public class WechatMsgRecDAO {
 	private Calendar msg_rcv_time;
 	private String msg_from_user;
 	private String msg_to_user;
-	private String msg_type;
+	private Integer msg_type;
 	private Blob msg_content;
 	private String msg_picurl;
 	private String msg_mediaid;
@@ -60,10 +60,10 @@ public class WechatMsgRecDAO {
 	public void setMsg_to_user(String msg_to_user) {
 		this.msg_to_user = msg_to_user;
 	}
-	public String getMsg_type() {
+	public Integer getMsg_type() {
 		return msg_type;
 	}
-	public void setMsg_type(String msg_type) {
+	public void setMsg_type(Integer msg_type) {
 		this.msg_type = msg_type;
 	}
 	public Blob getMsg_content() {

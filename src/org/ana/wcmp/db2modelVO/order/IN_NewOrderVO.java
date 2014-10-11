@@ -1,4 +1,4 @@
-package org.ana.wcmp.db2model.order.vo;
+package org.ana.wcmp.db2modelVO.order;
 
 import java.util.Calendar;
 

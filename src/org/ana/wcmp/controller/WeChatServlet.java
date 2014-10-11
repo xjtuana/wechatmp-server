@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.ana.wcmp.context.ServerContext;
 import org.ana.wcmp.util.encrypt.StringEncrypt;
 
 /**
@@ -75,6 +76,7 @@ public class WeChatServlet extends HttpServlet {
 		String respXml = null;
 		//认证成功，则返回消息
 		if (this.checkSig(signature, timestamp, nonce)){
+			//TODO
 		}
 		
 		PrintWriter out = response.getWriter();
@@ -84,13 +86,12 @@ public class WeChatServlet extends HttpServlet {
 	}
 	
 	private boolean checkSig(String signature, String timestamp, String nonce){
-		String token = "myToken";
-		String[] strArr = new String[] { token, timestamp, nonce };
+		String[] strArr = new String[] { ServerContext.WCMP_TOKEN, timestamp, nonce };
 		Arrays.sort(strArr);	//排序
 		String AfterProcess = strArr[0].concat(strArr[1]).concat(strArr[2]);  //拼接
 		String Encrypted = StringEncrypt.doEnc(AfterProcess, "SHA-1");
 		
-		return Encrypted != null ? Encrypted.equals(signature.toUpperCase()) : false;	//判断并返回一个布尔值
+		return Encrypted != null ? Encrypted.equals(signature.toUpperCase()) : false;	
 	}
 	
 }

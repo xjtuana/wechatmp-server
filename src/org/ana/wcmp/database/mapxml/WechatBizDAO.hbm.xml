@@ -7,11 +7,17 @@
   <id name="pk_wechat_biz" type="long">
    <generator class="identity"/>
   </id>
-  <property length="45" name="wechat_biz_name" not-null="true" type="string"/>
-  <property length="45" name="wechat_biz_label" not-null="true" type="string"/>
-  <property length="100" name="wechat_biz_class" not-null="true" type="string"/>
-  <property length="100" name="wechat_biz_method" not-null="true" type="string"/>
-  <property length="45" name="wechat_biz_code" not-null="true"
-   type="string" unique="true"/>
+  <property generated="never" lazy="false" length="45"
+   name="wechat_biz_name" not-null="true" type="string"/>
+  <property generated="never" lazy="false" length="45"
+   name="wechat_biz_label" not-null="true" type="string"/>
+  <property generated="never" lazy="false" length="100"
+   name="wechat_biz_class" not-null="true" type="string"/>
+  <property generated="never" lazy="false" length="100"
+   name="wechat_biz_method" not-null="true" type="string"/>
+  <property generated="never" lazy="false" length="45"
+   name="wechat_biz_code" not-null="true" type="string" unique="true"/>
+  <property name="wechat_biz_respmsg_type" type="integer"/>
+  <property name="wechat_biz_respmsg_id" type="integer"/>
  </class>
 </hibernate-mapping>

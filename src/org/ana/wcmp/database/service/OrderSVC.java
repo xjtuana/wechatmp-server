@@ -10,7 +10,7 @@ import org.ana.wcmp.database.dao.StaffDAO;
 import org.ana.wcmp.database.dao.StaffOrderRelDAO;
 import org.ana.wcmp.database.dao.WechatUserDAO;
 import org.ana.wcmp.database.exceptions.DBServiceException;
-import org.ana.wcmp.db2model.order.vo.IN_NewOrderVO;
+import org.ana.wcmp.db2modelVO.order.IN_NewOrderVO;
 import org.hibernate.Criteria;
 import org.hibernate.LobHelper;
 import org.hibernate.Session;

@@ -8,7 +8,21 @@ public class WechatBizDAO {
 	private String wechat_biz_class;
 	private String wechat_biz_method;
 	private String wechat_biz_code;
+	private Integer wechat_biz_respmsg_type;
+	private Integer wechat_biz_respmsg_id;
 	
+	public Integer getWechat_biz_respmsg_type() {
+		return wechat_biz_respmsg_type;
+	}
+	public void setWechat_biz_respmsg_type(Integer wechat_biz_respmsg_type) {
+		this.wechat_biz_respmsg_type = wechat_biz_respmsg_type;
+	}
+	public Integer getWechat_biz_respmsg_id() {
+		return wechat_biz_respmsg_id;
+	}
+	public void setWechat_biz_respmsg_id(Integer wechat_biz_respmsg_id) {
+		this.wechat_biz_respmsg_id = wechat_biz_respmsg_id;
+	}
 	public long getPk_wechat_biz() {
 		return pk_wechat_biz;
 	}
