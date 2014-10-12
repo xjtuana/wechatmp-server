@@ -1,5 +1,7 @@
 package org.ana.wcmp.database.dao;
 
+import java.sql.Blob;
+
 public class WechatBizDAO {
 	
 	private long pk_wechat_biz;
@@ -8,21 +10,9 @@ public class WechatBizDAO {
 	private String wechat_biz_class;
 	private String wechat_biz_method;
 	private String wechat_biz_code;
-	private Integer wechat_biz_respmsg_type;
-	private Integer wechat_biz_respmsg_id;
+	private boolean wechat_biz_isadmin;
+	private Blob wechat_biz_rtn_param_ph;
 	
-	public Integer getWechat_biz_respmsg_type() {
-		return wechat_biz_respmsg_type;
-	}
-	public void setWechat_biz_respmsg_type(Integer wechat_biz_respmsg_type) {
-		this.wechat_biz_respmsg_type = wechat_biz_respmsg_type;
-	}
-	public Integer getWechat_biz_respmsg_id() {
-		return wechat_biz_respmsg_id;
-	}
-	public void setWechat_biz_respmsg_id(Integer wechat_biz_respmsg_id) {
-		this.wechat_biz_respmsg_id = wechat_biz_respmsg_id;
-	}
 	public long getPk_wechat_biz() {
 		return pk_wechat_biz;
 	}
@@ -58,6 +48,18 @@ public class WechatBizDAO {
 	}
 	public void setWechat_biz_code(String wechat_biz_code) {
 		this.wechat_biz_code = wechat_biz_code;
+	}
+	public boolean isWechat_biz_isadmin() {
+		return wechat_biz_isadmin;
+	}
+	public void setWechat_biz_isadmin(boolean wechat_biz_isadmin) {
+		this.wechat_biz_isadmin = wechat_biz_isadmin;
+	}
+	public Blob getWechat_biz_rtn_param_ph() {
+		return wechat_biz_rtn_param_ph;
+	}
+	public void setWechat_biz_rtn_param_ph(Blob wechat_biz_rtn_param_ph) {
+		this.wechat_biz_rtn_param_ph = wechat_biz_rtn_param_ph;
 	}
 
 }

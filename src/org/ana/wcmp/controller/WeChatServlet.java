@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.ana.wcmp.context.ServerContext;
+import org.ana.wcmp.model.initializers.DataContextInitialize;
+import org.ana.wcmp.model.initializers.ServerContextInitialize;
+import org.ana.wcmp.model.msghandle.Handler;
+import org.ana.wcmp.model.synchronizers.SyncMsgContext;
+import org.ana.wcmp.model.synchronizers.SyncRulesContext;
 import org.ana.wcmp.util.encrypt.StringEncrypt;
 
 /**
@@ -22,10 +26,8 @@ import org.ana.wcmp.util.encrypt.StringEncrypt;
  * 加密签名：signature     时间戳：timestamp    随机数:nonce     随机字符串:echostr
  * 对中间两组数据与预留的token进行排序、拼接，并sha1加密后，与签名对比，若等同，则确认请求来自微信服务器，返回echostr完成认证
  */
-@WebServlet(name="Wechatmp" ,urlPatterns={"/wechatmp"})  //新版的web.xml替代
+@WebServlet(name="Wechatmp" ,urlPatterns={"/wechatmp"}, loadOnStartup=1)  //新版的web.xml替代
 public class WeChatServlet extends HttpServlet {
-	
-	public static ServletContext serc;
 	
 	private static final long serialVersionUID = 1L;
     /**
@@ -35,6 +37,15 @@ public class WeChatServlet extends HttpServlet {
     }
     
     public void init() {
+    	ServerContextInitialize svrinit = new ServerContextInitialize();
+    	DataContextInitialize datainit = new DataContextInitialize();
+    	svrinit.initServerContext();
+    	datainit.initBuildingContext();
+    	datainit.initStaffContext();
+    	datainit.initRuleContext();
+    	datainit.initMsgContext();
+    	new SyncRulesContext().start();
+    	new SyncMsgContext().start();
     }   
         	
 
@@ -50,10 +61,13 @@ public class WeChatServlet extends HttpServlet {
 		String echostr = request.getParameter("echostr");
 		
 		PrintWriter out = response.getWriter();
-		
-		if (this.checkSig(signature, timestamp, nonce)){
-			out.print(echostr);
-		}		//判断处理后信息是否等同于加密签名，是则认证通过，返回预定的echostr至微信服务器完成认证。
+		try{
+			if (this.checkSig(signature, timestamp, nonce)){
+				out.print(echostr);
+			}		//判断处理后信息是否等同于加密签名，是则认证通过，返回预定的echostr至微信服务器完成认证。
+		} catch (NullPointerException ne){
+			
+		}
 		out.close();
 		out = null;
 	}
@@ -75,8 +89,12 @@ public class WeChatServlet extends HttpServlet {
 		
 		String respXml = null;
 		//认证成功，则返回消息
-		if (this.checkSig(signature, timestamp, nonce)){
-			//TODO
+		try{
+			if (this.checkSig(signature, timestamp, nonce)){
+				respXml = new Handler().processReq(request);
+			}
+		} catch (NullPointerException ne) {
+			
 		}
 		
 		PrintWriter out = response.getWriter();
@@ -85,7 +103,7 @@ public class WeChatServlet extends HttpServlet {
 		out = null;
 	}
 	
-	private boolean checkSig(String signature, String timestamp, String nonce){
+	private boolean checkSig(String signature, String timestamp, String nonce) throws NullPointerException{
 		String[] strArr = new String[] { ServerContext.WCMP_TOKEN, timestamp, nonce };
 		Arrays.sort(strArr);	//排序
 		String AfterProcess = strArr[0].concat(strArr[1]).concat(strArr[2]);  //拼接

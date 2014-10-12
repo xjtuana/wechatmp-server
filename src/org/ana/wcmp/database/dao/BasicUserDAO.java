@@ -8,6 +8,7 @@ public class BasicUserDAO {
 	private String basic_user_ip;
 	private String basic_user_building;
 	private String basic_user_room;
+	private String basic_user_name;
 	
 	public long getPk_basic_user() {
 		return pk_basic_user;
@@ -44,6 +45,12 @@ public class BasicUserDAO {
 	}
 	public void setBasic_user_room(String basic_user_room) {
 		this.basic_user_room = basic_user_room;
+	}
+	public String getBasic_user_name() {
+		return basic_user_name;
+	}
+	public void setBasic_user_name(String basic_user_name) {
+		this.basic_user_name = basic_user_name;
 	}
 	
 }

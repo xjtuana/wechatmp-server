@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 public class IN_NewOrderVO {
 	
+	private long order_add_time;
 	private String order_client_name;
 	private String order_client_phone;
 	private String order_client_ip;
@@ -15,7 +16,7 @@ public class IN_NewOrderVO {
 	private Calendar order_resv_time;
 	private int order_status;
 	private String order_certification_code;
-	private long[] order_supposed_staff;
+	private Long[] order_supposed_staff;
 	
 	public String getOrder_client_name() {
 		return order_client_name;
@@ -83,11 +84,17 @@ public class IN_NewOrderVO {
 	public void setOrder_certification_code(String order_certification_code) {
 		this.order_certification_code = order_certification_code;
 	}
-	public long[] getOrder_supposed_staff() {
+	public Long[] getOrder_supposed_staff() {
 		return order_supposed_staff;
 	}
-	public void setOrder_supposed_staff(long[] order_supposed_staff) {
+	public void setOrder_supposed_staff(Long[] order_supposed_staff) {
 		this.order_supposed_staff = order_supposed_staff;
+	}
+	public long getOrder_add_time() {
+		return order_add_time;
+	}
+	public void setOrder_add_time(long order_add_time) {
+		this.order_add_time = order_add_time;
 	}
 
 }

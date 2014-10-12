@@ -13,7 +13,7 @@ public class StaffContextInfoVO {
 	private String staff_addrbuilding;
 	private String staff_addrroom;
 	private String staff_selfdesc;
-	private long[] domain_building_ids;
+	private long[] domain_building_pointers;
 
 	public long getStaff_id() {
 		return staff_id;
@@ -103,12 +103,12 @@ public class StaffContextInfoVO {
 		this.staff_selfdesc = staff_selfdesc;
 	}
 
-	public long[] getDomain_building_ids() {
-		return domain_building_ids;
+	public long[] getDomain_building_pointers() {
+		return domain_building_pointers;
 	}
 
-	public void setDomain_building_ids(long[] domain_building_ids) {
-		this.domain_building_ids = domain_building_ids;
+	public void setDomain_building_pointers(long[] domain_building_pointers) {
+		this.domain_building_pointers = domain_building_pointers;
 	}
 
 }

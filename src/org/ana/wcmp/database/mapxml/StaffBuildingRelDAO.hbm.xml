@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<hibernate-mapping default-lazy="false">
+<hibernate-mapping>
  <class dynamic-insert="true" dynamic-update="true" lazy="false"
   name="org.ana.wcmp.database.dao.StaffBuildingRelDAO" table="T_STAFF_BUILDING_REL">
   <id name="pk_staff_building" type="long">
@@ -9,9 +9,9 @@
   </id>
   <many-to-one cascade="save-update"
    class="org.ana.wcmp.database.dao.StaffDAO" column="staff_id"
-   fetch="join" name="staff"/>
+   fetch="join" lazy="proxy" name="staff"/>
   <many-to-one cascade="save-update"
    class="org.ana.wcmp.database.dao.DomainBuildingDAO"
-   column="domain_building_id" fetch="join" name="building"/>
+   column="domain_building_id" fetch="join" lazy="proxy" name="building"/>
  </class>
 </hibernate-mapping>

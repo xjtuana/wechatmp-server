@@ -1,6 +1,6 @@
 package org.ana.wcmp.db2modelVO.wechatMsg;
 
-import org.ana.wcmp.model.msgVO.ReqMsgGeneralVO;
+import org.ana.wcmp.model.vo.msg.ReqMsgGeneralVO;
 
 public class IN_ReqMsgGeneralVO extends ReqMsgGeneralVO{
 	

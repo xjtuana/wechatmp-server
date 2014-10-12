@@ -17,7 +17,7 @@ import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.xml.PrettyPrintWriter;
 import com.thoughtworks.xstream.io.xml.XppDriver;
 
-import org.ana.wcmp.model.msgVO.resp.*;
+import org.ana.wcmp.model.vo.msg.resp.*;
 
 public class XMLparser {
 	

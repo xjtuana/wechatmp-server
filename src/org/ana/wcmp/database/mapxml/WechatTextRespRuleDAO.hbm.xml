@@ -2,14 +2,20 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-lazy="false">
- <class dynamic-insert="true" dynamic-update="true" lazy="false" name="org.ana.wcmp.database.dao.WechatTextRespRuleDAO">
+ <class dynamic-insert="true" dynamic-update="true" lazy="false"
+  name="org.ana.wcmp.database.dao.WechatTextRespRuleDAO" table="T_WECHAT_TEXT_RESP_RULE">
   <id name="pk_text_rule" type="long">
    <generator class="identity"/>
   </id>
-  <property length="45" name="text_rule_name" not-null="true" type="string"/>
-  <property name="text_rule_mode" not-null="true" type="integer"/>
-  <property length="100" name="text_rule_keyword" not-null="true" type="string"/>
-  <property name="text_rule_resp_msg_type" not-null="true" type="integer"/>
-  <property name="text_rule_resp_msg_id" not-null="true" type="integer"/>
+  <property generated="never" lazy="false" length="45"
+   name="text_rule_name" not-null="true" type="string"/>
+  <property generated="never" lazy="false" name="text_rule_mode"
+   not-null="true" type="integer"/>
+  <property generated="never" lazy="false" length="100"
+   name="text_rule_keyword" not-null="true" type="string"/>
+  <property generated="never" lazy="false"
+   name="text_rule_resp_msg_type" not-null="true" type="integer"/>
+  <property generated="never" lazy="false" name="text_rule_resp_msg_id"
+   not-null="true" type="integer"/>
  </class>
 </hibernate-mapping>

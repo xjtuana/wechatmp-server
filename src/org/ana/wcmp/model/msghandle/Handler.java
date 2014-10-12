@@ -6,36 +6,42 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.ana.wcmp.model.mappings.EventMsgTypeMapping;
 import org.ana.wcmp.model.mappings.ReqMsgTypeMapping;
-import org.ana.wcmp.model.msgVO.EventMsgGeneralVO;
-import org.ana.wcmp.model.msgVO.ReqMsgGeneralVO;
 import org.ana.wcmp.model.recorder.MsgRecorder;
+import org.ana.wcmp.model.vo.msg.EventMsgGeneralVO;
+import org.ana.wcmp.model.vo.msg.ReqMsgGeneralVO;
+import org.ana.wcmp.model.vo.msg.RespMsgGeneralVO;
 import org.ana.wcmp.util.parser.XMLparser;
+import org.ana.wcmp.view.packmsg.MsgPacker;
 
 public class Handler {
 	
-	public void processReq(HttpServletRequest request){
+	public String processReq(HttpServletRequest request){
 		
 		HashMap<String,String> rawReqMsg = new HashMap<String,String>();
-		
+		RespMsgGeneralVO respmsg;
 		try {
-			rawReqMsg = XMLparser.parseXml(request);
-			
+			rawReqMsg = XMLparser.parseXml(request);			
 			if( rawReqMsg.get("MsgType").equalsIgnoreCase("event")) {	
 				EventMsgGeneralVO event = this.packReqEvent(rawReqMsg);
-//				EventGenericProcessor eventprocessor = new EventGenericProcessor(event);
-//				eventprocessor.process();
+				EventGenericProcessor eventprocessor = new EventGenericProcessor(event);
+				respmsg = eventprocessor.process();
 			} else {
 				ReqMsgGeneralVO reqmsg = this.packReqMsg(rawReqMsg);
 				MsgRecorder mrec = new MsgRecorder(reqmsg);
 				mrec.start();
-//				MsgGenericProcessor msgprocessor = new MsgGenericProcessor(reqmsg);
-//				msgprocessor.process();
+				MsgGenericProcessor msgprocessor = new MsgGenericProcessor(reqmsg);
+				respmsg = msgprocessor.process();
 			}
+
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			respmsg = null;
 		}
 		
+		MsgPacker mpack = new MsgPacker();
+		return mpack.general2anyMsg(respmsg);	
 	}
 	
 	private ReqMsgGeneralVO packReqMsg(HashMap<String,String> reqmsg_raw){
