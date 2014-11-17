@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<hibernate-mapping default-lazy="false" package="org.ana.wcmp.database.dao">
- <class dynamic-insert="true" dynamic-update="true" lazy="false"
-  name="DepartmentDAO" table="T_DEPARTMENT">
-  <id name="pk_department" type="long">
-   <generator class="identity"/>
-  </id>
-  <property generated="never" lazy="false" length="45"
-   name="department_name" not-null="true" type="string"/>
-  <property generated="never" lazy="false" name="department_desc" type="blob"/>
- </class>
+<hibernate-mapping default-lazy="false"
+	package="org.ana.wcmp.database.dao">
+	<class dynamic-insert="true" dynamic-update="true" lazy="false"
+		name="DepartmentDAO" table="T_DEPARTMENT">
+		<id name="pk_department" type="long">
+			<generator class="identity" />
+		</id>
+		<property generated="never" lazy="false" length="45"
+			name="department_name" not-null="true" type="string" />
+		<property generated="never" lazy="false" name="department_desc"
+			type="blob" />
+	</class>
 </hibernate-mapping>

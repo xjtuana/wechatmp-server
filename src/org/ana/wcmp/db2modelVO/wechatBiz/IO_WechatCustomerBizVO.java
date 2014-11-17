@@ -8,6 +8,7 @@ public class IO_WechatCustomerBizVO {
 	private String BizMethod;
 	private String BizCode;
 	private String BizRtnParamPlaceholders;
+	private int BizAuthLevel;
 	
 	public String getBizName() {
 		return BizName;
@@ -44,6 +45,12 @@ public class IO_WechatCustomerBizVO {
 	}
 	public void setBizRtnParamPlaceholders(String bizRtnParamPlaceholders) {
 		BizRtnParamPlaceholders = bizRtnParamPlaceholders;
+	}
+	public int getBizAuthLevel() {
+		return BizAuthLevel;
+	}
+	public void setBizAuthLevel(int bizAuthLevel) {
+		BizAuthLevel = bizAuthLevel;
 	}
 	
 }

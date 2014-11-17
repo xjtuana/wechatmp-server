@@ -2,21 +2,22 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-lazy="false">
- <class dynamic-insert="true" dynamic-update="true" lazy="false"
-  name="org.ana.wcmp.database.dao.BasicUserDAO" table="T_BASIC_USER">
-  <id name="pk_basic_user" type="long">
-   <generator class="identity"/>
-  </id>
-  <property generated="never" lazy="false" length="45"
-   name="basic_user_netid" not-null="true" type="string"/>
-  <property generated="never" lazy="false" length="45"
-   name="basic_user_stuid" type="string"/>
-  <property generated="never" lazy="false" length="45"
-   name="basic_user_building" type="string"/>
-  <property generated="never" lazy="false" length="45"
-   name="basic_user_room" type="string"/>
-  <property generated="never" lazy="false" length="45"
-   name="basic_user_ip" type="string"/>
-  <property length="45" name="basic_user_name" not-null="true" type="string"/>
- </class>
+	<class dynamic-insert="true" dynamic-update="true" lazy="false"
+		name="org.ana.wcmp.database.dao.BasicUserDAO" table="T_BASIC_USER">
+		<id name="pk_basic_user" type="long">
+			<generator class="identity" />
+		</id>
+		<property generated="never" lazy="false" length="45"
+			name="basic_user_netid" not-null="true" type="string" />
+		<property generated="never" lazy="false" length="45"
+			name="basic_user_stuid" type="string" />
+		<property generated="never" lazy="false" length="45"
+			name="basic_user_building" type="string" />
+		<property generated="never" lazy="false" length="45"
+			name="basic_user_room" type="string" />
+		<property generated="never" lazy="false" length="45"
+			name="basic_user_ip" type="string" />
+		<property length="45" name="basic_user_name" not-null="true"
+			type="string" />
+	</class>
 </hibernate-mapping>

@@ -2,16 +2,16 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-lazy="false">
- <class dynamic-insert="true" dynamic-update="true" lazy="false"
-  name="org.ana.wcmp.database.dao.WechatUserRoleRelDAO" table="T_WECHAT_USER_ROLE_REL">
-  <id name="pk_wcuser_role_rel" type="long">
-   <generator class="identity"/>
-  </id>
-  <many-to-one cascade="save-update"
-   class="org.ana.wcmp.database.dao.WechatUserDAO"
-   column="wcuser_role_rel_user_id" fetch="join" name="wcuser_role_rel_user"/>
-  <many-to-one cascade="save-update"
-   class="org.ana.wcmp.database.dao.UserRoleDAO"
-   column="wcuser_role_rel_role_id" fetch="join" name="wcuser_role_rel_role"/>
- </class>
+	<class dynamic-insert="true" dynamic-update="true" lazy="false"
+		name="org.ana.wcmp.database.dao.WechatUserRoleRelDAO" table="T_WECHAT_USER_ROLE_REL">
+		<id name="pk_wcuser_role_rel" type="long">
+			<generator class="identity" />
+		</id>
+		<many-to-one cascade="save-update"
+			class="org.ana.wcmp.database.dao.WechatUserDAO" column="wcuser_role_rel_user_id"
+			fetch="join" name="wcuser_role_rel_user" />
+		<many-to-one cascade="save-update"
+			class="org.ana.wcmp.database.dao.UserRoleDAO" column="wcuser_role_rel_role_id"
+			fetch="join" name="wcuser_role_rel_role" />
+	</class>
 </hibernate-mapping>

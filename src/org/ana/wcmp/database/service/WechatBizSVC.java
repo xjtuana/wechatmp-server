@@ -34,6 +34,7 @@ public class WechatBizSVC {
 			rawbiz.setBizLabel(thisbiz.getWechat_biz_label());
 			rawbiz.setBizClass(thisbiz.getWechat_biz_class());
 			rawbiz.setBizMethod(thisbiz.getWechat_biz_method());
+			rawbiz.setBizAuthLevel(thisbiz.getWechat_biz_auth_level());
 			if (thisbiz.getWechat_biz_rtn_param_ph() != null) {
 				BlobProcessor bp = new BlobProcessor();
 				bp.setUnhandled_blob(thisbiz.getWechat_biz_rtn_param_ph());

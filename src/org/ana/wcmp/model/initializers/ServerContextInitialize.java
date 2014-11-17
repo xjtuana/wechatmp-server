@@ -39,6 +39,8 @@ public class ServerContextInitialize {
 		ServerContext.WCMP_ORDER_OUT_OF_RANGE_ID = Long.parseLong(props.getProperty("wcmp_order_out_of_range_id"));
 		ServerContext.WCMP_USER_LOCKED_TYPE = Integer.parseInt(props.getProperty("wcmp_user_locked_type"));
 		ServerContext.WCMP_USER_LOCKED_ID = Long.parseLong(props.getProperty("wcmp_user_locked_id"));
+		
+		ServerContext.INQUIRY_AUTH_KEY = props.getProperty("inquiry_auth_key");
 	}
 
 }

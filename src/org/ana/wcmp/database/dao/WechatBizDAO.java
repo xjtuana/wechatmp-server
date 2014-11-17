@@ -12,6 +12,7 @@ public class WechatBizDAO {
 	private String wechat_biz_code;
 	private boolean wechat_biz_isadmin;
 	private Blob wechat_biz_rtn_param_ph;
+	private Integer wechat_biz_auth_level;		//TODO 在数据库中添加非空整形字段——权限值，权限值表见WechatUserAuthentication类。
 	
 	public long getPk_wechat_biz() {
 		return pk_wechat_biz;
@@ -60,6 +61,12 @@ public class WechatBizDAO {
 	}
 	public void setWechat_biz_rtn_param_ph(Blob wechat_biz_rtn_param_ph) {
 		this.wechat_biz_rtn_param_ph = wechat_biz_rtn_param_ph;
+	}
+	public Integer getWechat_biz_auth_level() {
+		return wechat_biz_auth_level;
+	}
+	public void setWechat_biz_auth_level(Integer wechat_biz_auth_level) {
+		this.wechat_biz_auth_level = wechat_biz_auth_level;
 	}
 
 }

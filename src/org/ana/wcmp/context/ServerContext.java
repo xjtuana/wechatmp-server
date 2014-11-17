@@ -31,4 +31,6 @@ public class ServerContext {
 	public static int WCMP_ORDER_OUT_OF_RANGE_TYPE = 0;
 	public static long WCMP_USER_LOCKED_ID = 0;
 	public static int WCMP_USER_LOCKED_TYPE = 0;
+	
+	public static String INQUIRY_AUTH_KEY = "";
 }

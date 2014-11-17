@@ -28,7 +28,6 @@ public class TextMsgProcess {
 			tbe.setBizRequest(reqtextmsg);
 			tbe.dispatchAndProcess();
 			this.respmsg = tbe.getBizResp();
-			//TODO
 		} else if (reqtextmsg.getContent().startsWith(ServerContext.WCMP_ADMIN_BIZ_MARKER)) {
 			//TODO
 		} else {

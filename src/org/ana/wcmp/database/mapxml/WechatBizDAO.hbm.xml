@@ -2,24 +2,26 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-lazy="false">
- <class dynamic-insert="true" dynamic-update="true" lazy="false"
-  name="org.ana.wcmp.database.dao.WechatBizDAO" table="T_WECHAT_BIZ">
-  <id name="pk_wechat_biz" type="long">
-   <generator class="identity"/>
-  </id>
-  <property generated="never" lazy="false" length="45"
-   name="wechat_biz_name" not-null="true" type="string"/>
-  <property generated="never" lazy="false" length="45"
-   name="wechat_biz_label" not-null="true" type="string"/>
-  <property generated="never" lazy="false" length="100"
-   name="wechat_biz_class" not-null="true" type="string"/>
-  <property generated="never" lazy="false" length="100"
-   name="wechat_biz_method" not-null="true" type="string"/>
-  <property generated="never" lazy="false" length="45"
-   name="wechat_biz_code" not-null="true" type="string" unique="true"/>
-  <property generated="never" lazy="false" name="wechat_biz_isadmin"
-   not-null="true" type="boolean"/>
-  <property generated="never" lazy="false"
-   name="wechat_biz_rtn_param_ph" type="blob"/>
- </class>
+	<class dynamic-insert="true" dynamic-update="true" lazy="false"
+		name="org.ana.wcmp.database.dao.WechatBizDAO" table="T_WECHAT_BIZ">
+		<id name="pk_wechat_biz" type="long">
+			<generator class="identity" />
+		</id>
+		<property generated="never" lazy="false" length="45"
+			name="wechat_biz_name" not-null="true" type="string" />
+		<property generated="never" lazy="false" length="45"
+			name="wechat_biz_label" not-null="true" type="string" />
+		<property generated="never" lazy="false" length="100"
+			name="wechat_biz_class" not-null="true" type="string" />
+		<property generated="never" lazy="false" length="100"
+			name="wechat_biz_method" not-null="true" type="string" />
+		<property generated="never" lazy="false" length="45"
+			name="wechat_biz_code" not-null="true" type="string" unique="true" />
+		<property generated="never" lazy="false" name="wechat_biz_isadmin"
+			not-null="true" type="boolean" />
+		<property generated="never" lazy="false" name="wechat_biz_rtn_param_ph"
+			type="blob" />
+		<property generated="never" lazy="false" name="wechat_biz_auth_level"
+			type="integer" not-null="true" />
+	</class>
 </hibernate-mapping>

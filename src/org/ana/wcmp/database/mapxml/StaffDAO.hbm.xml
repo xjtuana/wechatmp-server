@@ -2,38 +2,38 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-lazy="false">
- <class dynamic-insert="true" dynamic-update="true" lazy="false"
-  name="org.ana.wcmp.database.dao.StaffDAO" table="T_STAFF">
-  <id name="pk_staff" type="long">
-   <generator class="identity"/>
-  </id>
-  <property length="45" name="staff_netid" type="string"/>
-  <property length="45" name="staff_stuid" not-null="true" type="string" unique="true"/>
-  <property length="45" name="staff_name" not-null="true" type="string"/>
-  <property name="staff_gender" not-null="true" type="boolean"/>
-  <property length="45" name="staff_phone" not-null="true" type="string"/>
-  <property length="45" name="staff_qq" type="string"/>
-  <property length="45" name="staff_wechat_acc" type="string"/>
-  <property name="staff_grade" type="integer"/>
-  <property length="20" name="staff_campus" type="string"/>
-  <property length="20" name="staff_addrbuilding" type="string"/>
-  <property length="20" name="staff_addrroom" type="string"/>
-  <property name="staff_selfdesc" type="blob"/>
-  <many-to-one cascade="save-update"
-   class="org.ana.wcmp.database.dao.WechatUserDAO"
-   column="staff_wechat_user_id" fetch="join" name="staff_wechat_user"/>
-  <many-to-one cascade="save-update"
-   class="org.ana.wcmp.database.dao.OAUserDAO" column="staff_oa_user_id"
-   fetch="join" name="staff_oa_user"/>
-  <many-to-one cascade="save-update"
-   class="org.ana.wcmp.database.dao.GroupDAO" column="staff_group_id"
-   fetch="join" name="staff_group"/>
-  <many-to-one cascade="save-update"
-   class="org.ana.wcmp.database.dao.DepartmentDAO"
-   column="staff_department_id" fetch="join" name="staff_department"/>
-  <property name="staff_sms_service" not-null="true" type="boolean"/>
-  <property name="staff_reg_in_time" not-null="true" type="calendar"/>
-  <property name="staff_reg_out_time" type="calendar"/>
-  <property name="staff_status" not-null="true" type="integer"/>
- </class>
+	<class dynamic-insert="true" dynamic-update="true" lazy="false"
+		name="org.ana.wcmp.database.dao.StaffDAO" table="T_STAFF">
+		<id name="pk_staff" type="long">
+			<generator class="identity" />
+		</id>
+		<property length="45" name="staff_netid" type="string" />
+		<property length="45" name="staff_stuid" not-null="true"
+			type="string" unique="true" />
+		<property length="45" name="staff_name" not-null="true" type="string" />
+		<property name="staff_gender" not-null="true" type="boolean" />
+		<property length="45" name="staff_phone" not-null="true"
+			type="string" />
+		<property length="45" name="staff_qq" type="string" />
+		<property length="45" name="staff_wechat_acc" type="string" />
+		<property name="staff_grade" type="integer" />
+		<property length="20" name="staff_campus" type="string" />
+		<property length="20" name="staff_addrbuilding" type="string" />
+		<property length="20" name="staff_addrroom" type="string" />
+		<property name="staff_selfdesc" type="blob" />
+		<many-to-one cascade="save-update"
+			class="org.ana.wcmp.database.dao.WechatUserDAO" column="staff_wechat_user_id"
+			fetch="join" name="staff_wechat_user" />
+		<many-to-one cascade="save-update" class="org.ana.wcmp.database.dao.OAUserDAO"
+			column="staff_oa_user_id" fetch="join" name="staff_oa_user" />
+		<many-to-one cascade="save-update" class="org.ana.wcmp.database.dao.GroupDAO"
+			column="staff_group_id" fetch="join" name="staff_group" />
+		<many-to-one cascade="save-update"
+			class="org.ana.wcmp.database.dao.DepartmentDAO" column="staff_department_id"
+			fetch="join" name="staff_department" />
+		<property name="staff_sms_service" not-null="true" type="boolean" />
+		<property name="staff_reg_in_time" not-null="true" type="calendar" />
+		<property name="staff_reg_out_time" type="calendar" />
+		<property name="staff_status" not-null="true" type="integer" />
+	</class>
 </hibernate-mapping>

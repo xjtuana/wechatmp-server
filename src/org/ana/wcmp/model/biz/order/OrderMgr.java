@@ -116,11 +116,31 @@ public class OrderMgr {
 	}
 
 	public void searchOrderById(TextMsg textrequest){
-		//TODO
+		//TODO 按单号查询，应使用验证方式为本人+所有网管，直接文本返回
 	}
 	
 	public void searchMyOrders(TextMsg textrequest){
-		//TODO
+		//TODO 查询我申报的所有故障单，考虑外链页面实现
+	}
+	
+	public void cancelOrderById(TextMsg textrequest){
+		//TODO 凭ID取消申报的故障单，应考虑使用验证方式为本人加管理员。
+	}
+	
+	public void updateOrderById(TextMsg textrequest){
+		//TODO 工单修改，考虑使用验证方式为本人加管理员。
+	}
+	
+	public void rateOrderById(TextMsg textrequest){
+		//TODO 评价工单，考虑使用验证方式为仅本人。
+	}
+	
+	public void getOrderByID(TextMsg textrequest){
+		//TODO 网管接单方法，验证为仅网管。
+	}
+	
+	public void setOrderFixed(TextMsg textrequest){
+		//TODO 完成派单任务，考虑验证方法为仅本人（网管本人）。
 	}
 	
 	//生成凭证的方法传入参数为凭证长度，可以任意指定。由于没有防重复机制，为了减少重复的可能性，本案例中指定了64位，在案例对应的数据量下可以视为不会重复

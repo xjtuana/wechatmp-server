@@ -52,6 +52,11 @@ public class TextBizEntry {
 				return;
 			}
 			
+			if (!wcuserauth.isAuthorized(thisbiz.getBizAuthLevel(), user)){
+//				this.BizResp = TODO 添加未授权的提示消息
+				return;
+			}
+			
 			Class BizClass = Class.forName(thisbiz.getBizClass());
 			Object BizObj = BizClass.newInstance();
 			Method BizMethod = BizClass.getDeclaredMethod(thisbiz.getBizMethod(), new Class[]{TextMsg.class});
